@@ -67,6 +67,7 @@ void processInstructions(vector<pair<string, int64_t>> &instructions) {
             for (auto &p : processed) {
                 get<2>(p) = 0;
             }
+            
             continue;
         }
 
@@ -83,11 +84,12 @@ void processInstructions(vector<pair<string, int64_t>> &instructions) {
             throw runtime_error("Unknown instruction");
         }
     }
+    
+    cout << "acc=" << acc << " after appropriate change\n";
 }
 
 int main() {
     vector<pair<string, int64_t>> instructions = readBootCode();
     processInstructions(instructions);
-    cout << "acc=" << acc << " after appropriate change\n";
     return 0;
 }
